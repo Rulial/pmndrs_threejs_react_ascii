@@ -43,9 +43,9 @@ function AsciiRenderer({
   bgColor = 'black',
   fgColor = 'white',
   characters = ' .:-+*=%@#',
-  invert = false,
+  invert = true,
   color = false,
-  resolution = 0.35
+  resolution = 0.15
 }) {
   // Reactive state
   const { size, gl, scene, camera } = useThree()
@@ -67,19 +67,19 @@ function AsciiRenderer({
   }, [fgColor, bgColor])
 
   // Append on mount, remove on unmount
-  useEffect(() => {
-    gl.domElement.style.opacity = '0'
-    gl.domElement.parentNode.appendChild(effect.domElement)
-    return () => {
-      gl.domElement.style.opacity = '1'
-      gl.domElement.parentNode.removeChild(effect.domElement)
-    }
-  }, [effect])
+ // useEffect(() => {
+   // gl.domElement.style.opacity = '0'
+    //gl.domElement.parentNode.appendChild(effect.domElement)
+    //return () => {
+     // gl.domElement.style.opacity = '1'
+      //gl.domElement.parentNode.removeChild(effect.domElement)
+    //}
+  //}, [effect])
 
   // Set size
-  useEffect(() => {
-    effect.setSize(size.width, size.height)
-  }, [effect, size])
+  //useEffect(() => {
+    //effect.setSize(size.width, size.height)
+  //}, [effect, size])
 
   // Take over render-loop (that is what the index is for)
   useFrame((state) => {
