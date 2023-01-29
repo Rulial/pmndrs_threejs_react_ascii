@@ -65,7 +65,7 @@ function AsciiRenderer({
     effect.domElement.style.color = fgColor
     effect.domElement.style.backgroundColor = bgColor
   }, [fgColor, bgColor])
-/*
+
   // Append on mount, remove on unmount
   useEffect(() => {
     gl.domElement.style.opacity = '1'
@@ -75,7 +75,7 @@ function AsciiRenderer({
       gl.domElement.parentNode.removeChild(effect.domElement)
     }
   }, [effect])
-
+/*
   // Set size
   useEffect(() => {
     effect.setSize(size.width, size.height)
