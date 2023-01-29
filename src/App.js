@@ -46,7 +46,7 @@ function AsciiRenderer({
   invert = true,
   color = false,
   resolution = 0.15
-}) {
+}) /*{
   // Reactive state
   const { size, gl, scene, camera } = useThree()
 
@@ -75,7 +75,7 @@ function AsciiRenderer({
       gl.domElement.parentNode.removeChild(effect.domElement)
     }
   }, [effect])
-*/
+
   // Set size
   useEffect(() => {
     effect.setSize(size.width, size.height)
@@ -87,4 +87,4 @@ function AsciiRenderer({
   }, renderIndex)
 
   // This component returns nothing, it is a purely logical
-}
+} */
