@@ -75,11 +75,11 @@ function AsciiRenderer({
       gl.domElement.parentNode.removeChild(effect.domElement)
     }
   }, [effect])
-/*
+
   // Set size
   useEffect(() => {
     effect.setSize(size.width, size.height)
-  }, [effect, size]) */
+  }, [effect, size]) 
 
   // Take over render-loop (that is what the index is for)
   useFrame((state) => {
