@@ -59,7 +59,7 @@ function AsciiRenderer({
     effect.domElement.style.pointerEvents = 'none'
     return effect
   }, [characters, invert, color, resolution])
-
+/*
   // Styling
   useLayoutEffect(() => {
     effect.domElement.style.color = fgColor
@@ -79,7 +79,7 @@ function AsciiRenderer({
   // Set size
   useEffect(() => {
     effect.setSize(size.width, size.height)
-  }, [effect, size])
+  }, [effect, size]) */
 
   // Take over render-loop (that is what the index is for)
   useFrame((state) => {
