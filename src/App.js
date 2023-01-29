@@ -11,14 +11,14 @@ export default function App() {
       <color attach="background" args={['black']} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -10, -10]} />
-      <Sphere />
+      <TorusKnot />
       <OrbitControls />
       <AsciiRenderer fgColor="white" bgColor="black" />
     </Canvas>
   )
 }
 
-function Sphere(props) {
+function TorusKnot (props) {
   const ref = useRef()
   const [clicked, click] = useState(false)
   const [hovered, hover] = useState(false)
@@ -32,7 +32,7 @@ function Sphere(props) {
       onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
-      <SphereGeometry args={[200, 20, 10]} />
+      <torusKnotGeometry args={[1, 0.2, 128, 32]} />
       <meshStandardMaterial color="orange" />
     </mesh>
   )
