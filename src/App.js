@@ -28,8 +28,8 @@ function Box(props) {
     <mesh
       {...props}
       ref={ref}
-      scale={clicked ? 1.5 : 1.25}
-      onClick={() => click(!clicked)}
+      //scale={clicked ? 1.5 : 1.25}
+      //onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
       <planeGeometry args={[20, 20]} />
@@ -71,7 +71,7 @@ function AsciiRenderer({
     gl.domElement.style.opacity = '1'
     gl.domElement.parentNode.appendChild(effect.domElement)
     return () => {
-      gl.domElement.style.opacity = '1'
+      gl.domElement.style.opacity = '0'
       gl.domElement.parentNode.removeChild(effect.domElement)
     }
   }, [effect])
