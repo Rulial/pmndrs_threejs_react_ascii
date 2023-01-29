@@ -23,7 +23,7 @@ function Torusknot(props) {
   const [clicked, click] = useState(false)
   const [hovered, hover] = useState(false)
   useCursor(hovered)
-  useFrame((state, delta) => (ref.current.rotation.x = ref.current.rotation.y += delta / 0))
+  useFrame((state, delta) => (ref.current.rotation.x = ref.current.rotation.y += delta / 5))
   return (
     <mesh
       {...props}
@@ -68,7 +68,7 @@ function AsciiRenderer({
 
   // Append on mount, remove on unmount
   useEffect(() => {
-    gl.domElement.style.opacity = '0'
+    gl.domElement.style.opacity = '1'
     gl.domElement.parentNode.appendChild(effect.domElement)
     return () => {
       gl.domElement.style.opacity = '1'
