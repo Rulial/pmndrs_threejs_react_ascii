@@ -59,8 +59,8 @@ function AsciiRenderer({
     effect.domElement.style.pointerEvents = 'none' 
     return effect
   }, [characters, invert, color, resolution])
-
-  // Styling
+}
+/*  // Styling
   useLayoutEffect(() => {
     effect.domElement.style.color = fgColor
     effect.domElement.style.backgroundColor = bgColor
@@ -87,4 +87,4 @@ function AsciiRenderer({
   }, renderIndex)
 
   // This component returns nothing, it is a purely logical
-}
+  */
