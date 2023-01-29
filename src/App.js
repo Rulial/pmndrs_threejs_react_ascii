@@ -23,7 +23,7 @@ function Box(props) {
   const [clicked, click] = useState(false)
   const [hovered, hover] = useState(false)
   useCursor(hovered)
-  useFrame((state, delta) => (ref.current.rotation.z += delta / 0))
+  useFrame((state, delta) => (ref.current.rotation.x = ref.current.rotation.y += delta / 0))
   return (
     <mesh
       {...props}
@@ -32,7 +32,7 @@ function Box(props) {
       onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
-      <boxGeometry args={[.1, .2, 100]} />
+      <planeGeometry args={[2, 2]} />
       <meshStandardMaterial color="orange" />
     </mesh>
   )
