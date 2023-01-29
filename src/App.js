@@ -49,7 +49,7 @@ function AsciiRenderer({
 }) {
   // Reactive state
   const { size, gl, scene, camera } = useThree()
-
+/*
   // Create effect
   const effect = useMemo(() => {
     const effect = new AsciiEffect(gl, characters, { invert, color, resolution })
@@ -59,7 +59,7 @@ function AsciiRenderer({
     effect.domElement.style.pointerEvents = 'none'
     return effect
   }, [characters, invert, color, resolution])
-/*
+
   // Styling
   useLayoutEffect(() => {
     effect.domElement.style.color = fgColor
