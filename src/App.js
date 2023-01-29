@@ -46,7 +46,7 @@ function AsciiRenderer({
   invert = true,
   color = false,
   resolution = 0.15
-}) /*{
+}) {
   // Reactive state
   const { size, gl, scene, camera } = useThree()
 
@@ -65,7 +65,7 @@ function AsciiRenderer({
     effect.domElement.style.color = fgColor
     effect.domElement.style.backgroundColor = bgColor
   }, [fgColor, bgColor])
-
+*/
   // Append on mount, remove on unmount
   useEffect(() => {
     gl.domElement.style.opacity = '1'
@@ -87,4 +87,4 @@ function AsciiRenderer({
   }, renderIndex)
 
   // This component returns nothing, it is a purely logical
-} */
+} 
