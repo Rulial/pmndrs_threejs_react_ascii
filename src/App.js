@@ -23,7 +23,7 @@ function Box(props) {
   const [clicked, click] = useState(false)
   const [hovered, hover] = useState(false)
   useCursor(hovered)
-  useFrame((state, delta) => (ref.current.rotation.x = ref.current.rotation.y += delta / 0))
+  useFrame((state, delta) => (ref.current.rotation.z += delta / 0))
   return (
     <mesh
       {...props}
