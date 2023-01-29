@@ -68,19 +68,19 @@ function AsciiRenderer({
 */
   // Append on mount, remove on unmount
   useEffect(() => {
-    gl.domElement.style.opacity = '0'
+    gl.domElement.style.opacity = '0.5'
     gl.domElement.parentNode.appendChild(effect.domElement)
     return () => {
       gl.domElement.style.opacity = '1'
       gl.domElement.parentNode.removeChild(effect.domElement)
     }
   }, [effect])
-/*
+
   // Set size
   useEffect(() => {
     effect.setSize(size.width, size.height)
   }, [effect, size]) 
-*/
+
   // Take over render-loop (that is what the index is for)
   useFrame((state) => {
     effect.render(scene, camera)
