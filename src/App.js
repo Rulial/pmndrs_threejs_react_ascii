@@ -23,7 +23,7 @@ function Box(props) {
   const [clicked, click] = useState(false)
   const [hovered, hover] = useState(false)
   useCursor(hovered)
-  useFrame((state, delta) => (0))
+  useFrame((state) => (0))
   return (
     <mesh
       {...props}
