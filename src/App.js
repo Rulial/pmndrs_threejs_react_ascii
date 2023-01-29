@@ -32,7 +32,7 @@ function Box (props) {
       onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
-      <boxGeometry args={[50, 100, 100]} />
+      <boxGeometry args={[25, 25, 15]} />
       <meshStandardMaterial color="orange" />
     </mesh>
   )
