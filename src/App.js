@@ -54,8 +54,8 @@ function AsciiRenderer({
   const effect = useMemo(() => {
     const effect = new AsciiEffect(gl, characters, { invert, color, resolution })
     effect.domElement.style.position = 'absolute'
-    /*effect.domElement.style.top = '0px'
-    effect.domElement.style.left = '0px' */
+    effect.domElement.style.top = '0px'
+    effect.domElement.style.left = '0px'
     effect.domElement.style.pointerEvents = 'none' 
     return effect
   }, [characters, invert, color, resolution])
