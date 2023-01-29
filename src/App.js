@@ -59,7 +59,7 @@ function AsciiRenderer({
     effect.domElement.style.pointerEvents = 'none' */
     return effect
   }, [characters, invert, color, resolution])
-
+/*
   // Styling
   useLayoutEffect(() => {
     effect.domElement.style.color = fgColor
