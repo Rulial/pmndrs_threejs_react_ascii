@@ -59,7 +59,7 @@ function AsciiRenderer({
     effect.domElement.style.pointerEvents = 'none' 
     return effect
   }, [characters, invert, color, resolution])
-}
+
 /*  // Styling
   useLayoutEffect(() => {
     effect.domElement.style.color = fgColor
@@ -75,7 +75,7 @@ function AsciiRenderer({
       gl.domElement.parentNode.removeChild(effect.domElement)
     }
   }, [effect])
-
+*/
   // Set size
   useEffect(() => {
     effect.setSize(size.width, size.height)
@@ -87,4 +87,4 @@ function AsciiRenderer({
   }, renderIndex)
 
   // This component returns nothing, it is a purely logical
-  */
+}
