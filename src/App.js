@@ -32,7 +32,7 @@ function Torusknot(props) {
       onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
-      <torusKnotGeometry args={[1, 0.2, 128, 32]} />
+      <sphereKnotGeometry args={[200, 20, 10]} />
       <meshStandardMaterial color="orange" />
     </mesh>
   )
