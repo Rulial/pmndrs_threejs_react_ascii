@@ -23,7 +23,7 @@ function Torusknot(props) {
   const [clicked, click] = useState(false)
   const [hovered, hover] = useState(false)
   useCursor(hovered)
-  useFrame((state, delta) => (ref.current.rotation.x = ref.current.rotation.y += delta / 10))
+  useFrame((state, delta) => (ref.current.rotation.x = ref.current.rotation.y += delta / 1))
   return (
     <mesh
       {...props}
@@ -60,18 +60,18 @@ function AsciiRenderer({
     return effect
   }, [characters, invert, color, resolution])
 
-/*  // Styling
+  // Styling
   useLayoutEffect(() => {
     effect.domElement.style.color = fgColor
     effect.domElement.style.backgroundColor = bgColor
   }, [fgColor, bgColor])
-*/
+
   // Append on mount, remove on unmount
   useEffect(() => {
-    gl.domElement.style.opacity = '0.5'
+    gl.domElement.style.opacity = '1'
     gl.domElement.parentNode.appendChild(effect.domElement)
     return () => {
-      gl.domElement.style.opacity = '1'
+      gl.domElement.style.opacity = '0'
       gl.domElement.parentNode.removeChild(effect.domElement)
     }
   }, [effect])
@@ -80,11 +80,11 @@ function AsciiRenderer({
   useEffect(() => {
     effect.setSize(size.width, size.height)
   }, [effect, size]) 
-
+/*
   // Take over render-loop (that is what the index is for)
   useFrame((state) => {
     effect.render(scene, camera)
   }, renderIndex)
-
+*/
   // This component returns nothing, it is a purely logical
 } 
