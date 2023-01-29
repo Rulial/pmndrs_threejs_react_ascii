@@ -18,7 +18,7 @@ export default function App() {
   )
 }
 
-function Torusknot(props) {
+function Sphere(props) {
   const ref = useRef()
   const [clicked, click] = useState(false)
   const [hovered, hover] = useState(false)
@@ -32,7 +32,7 @@ function Torusknot(props) {
       onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
-      <sphereGeometry args={[200, 20, 10]} />
+      <SphereGeometry args={[200, 20, 10]} />
       <meshStandardMaterial color="orange" />
     </mesh>
   )
