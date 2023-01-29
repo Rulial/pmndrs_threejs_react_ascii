@@ -11,19 +11,19 @@ export default function App() {
       <color attach="background" args={['black']} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -20, -10]} />
-      <Box />
+      <TorusKnot />
       <OrbitControls />
       <AsciiRenderer fgColor="white" bgColor="black" />
     </Canvas>
   )
 }
 
-function Box (props) {
+function TorusKnot (props) {
   const ref = useRef()
   const [clicked, click] = useState(false)
   const [hovered, hover] = useState(false)
   useCursor(hovered)
-  useFrame((state))
+  useFrame((state, delta) => render.current.rotation.x = render.current.rotation.y += delta/1)
   return (
     <mesh
       {...props}
@@ -32,7 +32,7 @@ function Box (props) {
       onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
-      <boxGeometry args={[75, 75, 25]} />
+      <torusKnotGeometry args={[1, .2, 128, 32]} />
       <meshStandardMaterial color="orange" />
     </mesh>
   )
@@ -77,9 +77,9 @@ function AsciiRenderer({
   //}, [effect])
 
   // Set size
-  //useEffect(() => {
-    //effect.setSize(size.width, size.height)
-  //}, [effect, size])
+  useEffect(() => {
+    effect.setSize(size.width, size.height)
+  }, [effect, size])
 
   // Take over render-loop (that is what the index is for)
   useFrame((state) => {
