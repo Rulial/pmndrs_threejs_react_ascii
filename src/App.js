@@ -10,7 +10,7 @@ export default function App() {
     <Canvas>
       <color attach="background" args={['black']} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <pointLight position={[-10, -10, -10]} />
+      <pointLight position={[-10, -20, -10]} />
       <Box />
       <OrbitControls />
       <AsciiRenderer fgColor="white" bgColor="black" />
@@ -32,7 +32,7 @@ function Box (props) {
       onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
-      <boxGeometry args={[15, 15, 15]} />
+      <boxGeometry args={[100, 100, 100]} />
       <meshStandardMaterial color="orange" />
     </mesh>
   )
@@ -44,7 +44,7 @@ function AsciiRenderer({
   fgColor = 'white',
   characters = ' .:-+*=%@#',
   invert = true,
-  color = false,
+  color = true,
   resolution = 0.15
 }) {
   // Reactive state
