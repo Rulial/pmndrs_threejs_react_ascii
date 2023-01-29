@@ -32,7 +32,7 @@ function Box(props) {
       //onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
-      <boxBufferGeometry args={[20, 20, 20]} />
+      <boxBufferGeometry args={[20, 20, 2]} />
       <meshStandardMaterial color="orange" />
     </mesh>
   )
@@ -68,10 +68,10 @@ function AsciiRenderer({
 
   // Append on mount, remove on unmount
   useEffect(() => {
-    gl.domElement.style.opacity = '1'
+    gl.domElement.style.opacity = '0'
     gl.domElement.parentNode.appendChild(effect.domElement)
     return () => {
-      gl.domElement.style.opacity = '0'
+      gl.domElement.style.opacity = '1'
       gl.domElement.parentNode.removeChild(effect.domElement)
     }
   }, [effect])
