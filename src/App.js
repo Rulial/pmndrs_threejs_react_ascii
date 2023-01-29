@@ -23,7 +23,7 @@ function Torusknot(props) {
   const [clicked, click] = useState(false)
   const [hovered, hover] = useState(false)
   useCursor(hovered)
-  useFrame((state, delta) => (ref.current.rotation.x = ref.current.rotation.y += delta / 2))
+  useFrame((state, delta) => (ref.current.rotation.x = ref.current.rotation.y += delta / 0))
   return (
     <mesh
       {...props}
