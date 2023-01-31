@@ -11,28 +11,28 @@ export default function App() {
       <color attach="background" args={['black']} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -10, -10]} />
-      <Box />
+      <Sphere />
       <OrbitControls />
       <AsciiRenderer fgColor="white" bgColor="black" />
     </Canvas>
   )
 }
 
-function Box(props) {
+function Sphere(props) {
   const ref = useRef()
   const [clicked, click] = useState(false)
   const [hovered, hover] = useState(false)
   useCursor(hovered)
-  useFrame((state) => (0))
+  useFrame((state, delta) => (ref.current.rotation.x = ref.current.rotation.y += delta / 2))
   return (
     <mesh
       {...props}
       ref={ref}
-      //scale={clicked ? 1.5 : 1.25}
-      //onClick={() => click(!clicked)}
+      scale={clicked ? 1.5 : 1.25}
+      onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
-      <boxBufferGeometry args={[20, 20, 2]} />
+      <sphereGeometry args={[1, 32, 32]} />
       <meshStandardMaterial color="orange" />
     </mesh>
   )
@@ -56,7 +56,7 @@ function AsciiRenderer({
     effect.domElement.style.position = 'absolute'
     effect.domElement.style.top = '0px'
     effect.domElement.style.left = '0px'
-    effect.domElement.style.pointerEvents = 'none' 
+    effect.domElement.style.pointerEvents = 'none'
     return effect
   }, [characters, invert, color, resolution])
 
