@@ -11,14 +11,14 @@ export default function App() {
       <color attach="background" args={['black']} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
       <pointLight position={[-10, -10, -10]} />
-      <Sphere />
+      <Box />
       <OrbitControls />
       <AsciiRenderer fgColor="white" bgColor="black" />
     </Canvas>
   )
 }
 
-function Sphere(props) {
+function Box(props) {
   const ref = useRef()
   const [clicked, click] = useState(false)
   const [hovered, hover] = useState(false)
@@ -28,11 +28,11 @@ function Sphere(props) {
     <mesh
       {...props}
       ref={ref}
-      scale={clicked ? 1.5 : 1.25}
+      scale={clicked ? [1.5, 1.5, 1.5] : [1.25, 1.25, 1.25]}
       onClick={() => click(!clicked)}
       onPointerOver={() => hover(true)}
       onPointerOut={() => hover(false)}>
-      <sphereGeometry args={[1, 32, 32]} />
+      <boxGeometry />
       <meshStandardMaterial color="orange" />
     </mesh>
   )
